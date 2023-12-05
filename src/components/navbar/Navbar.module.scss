@@ -1,0 +1,87 @@
+@import '../../styles/index';
+
+
+.list {
+  position: relative;
+  padding-bottom: 79px;
+  margin-bottom: 30px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: $bgc-gray-color;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.item {
+  @include text;
+  font-family: map-get($fonts, b), sans-serif;
+  font-weight: 700;
+  position: relative;
+  text-align: start;
+  margin-bottom: 24px;
+
+
+}
+
+
+@include desktopMedia() {
+  .nav {
+    display: flex;
+    gap: 72px;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 72px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .item {
+    margin: 0;
+    padding: 15px 0;
+    position: relative;
+  }
+
+  .link {
+    transition: all $animation $time-animation;
+
+    //&::before {
+    //  content: '';
+    //  position: absolute;
+    //  width: 100%;
+    //  height: 3px;
+    //  left: 0;
+    //  bottom: 10px;
+    //  border-radius: 18px;
+    //  visibility: hidden;
+    //}
+
+    &:hover, &:focus {
+      color: $bgc-orange-color;
+      opacity: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $bgc-orange-color;
+        left: 0;
+        bottom: 10px;
+        border-radius: 18px;
+        //visibility: visible;
+      }
+    }
+  }
+}
+

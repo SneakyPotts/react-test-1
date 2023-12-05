@@ -1,0 +1,45 @@
+@import "../../styles";
+
+.accordion__item {
+  border-bottom: solid 3px $bgc-gray-color;
+  padding: 16px 0;
+
+  &__active {
+    border-bottom: solid 3px $bgc-blue-color;
+  }
+}
+
+.accordion__title__wrapper {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cost__link__title {
+  @include title;
+  font-family: map-get($fonts, sm), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: start;
+
+  &__active {
+    @include title;
+    font-family: map-get($fonts, sm), sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 16px;
+    text-align: start;
+    color: $text-blue-color;
+  }
+}
+
+.accordion__descr {
+  @include text;
+  font-size: 14px;
+  text-align: start;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+

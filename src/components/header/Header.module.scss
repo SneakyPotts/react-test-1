@@ -1,0 +1,48 @@
+@import '../../styles/index';
+
+
+.header {
+  background: $gradient-header;
+}
+
+.header__container {
+  @include mobileDesktop;
+  padding: 15px 15px;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__burger_icon {
+}
+
+.header__desktop_menu {
+  display: none;
+}
+
+
+//=======DESKTOP=========
+@include desktopMedia() {
+
+  .header__container {
+    @include containerDesktop;
+    padding: 24px 15px 0 15px;
+  }
+
+  .header__desktop_menu {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__burger_icon {
+    display: none;
+  }
+}
+
+
+
+

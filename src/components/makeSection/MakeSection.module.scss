@@ -1,0 +1,48 @@
+@import "../../styles";
+
+
+.container {
+  @include mobileDesktop;
+  padding: 38px 0 100px 15px;
+  overflow: hidden;
+}
+
+.make__title {
+  @include title;
+  margin-bottom: 113px;
+  text-align: start;
+  width: 315px;
+}
+
+.make__list {
+  display: flex;
+  gap: 20px;
+}
+
+//=========================================================================
+
+@include desktopMedia() {
+
+  .make {
+    background: url("../../../public/assets/makeSection/circle1.png") left 40% no-repeat,
+    url("../../../public/assets/makeSection/circle2.png") right 70% no-repeat
+  }
+
+  .container {
+    @include containerDesktop;
+  }
+
+  .make__title {
+    margin-bottom: 129px;
+  }
+
+  .make__list {
+    display: grid;
+    grid-template-columns: repeat(3, 370px);
+    justify-content: center;
+    justify-items: center;
+    gap: 126px 30px;
+    margin-bottom: 180px;
+  }
+
+}

@@ -1,0 +1,66 @@
+@import "../../styles";
+
+
+.makeCard__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 108px 46px 40px 46px;
+  position: relative;
+  border-radius: 35px;
+  max-width: 320px;
+  border-radius: 35px;
+  background: $gradient-header;
+}
+
+.makeCard__img {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  transform: translateX(40%);
+  object-fit: contain;
+}
+
+.makeCard__item__title {
+  width: 215px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: map-get($fonts, b), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.makeCard__descr {
+  width: 228px;
+  @include text;
+}
+
+
+//=====================================================
+@include desktopMedia() {
+
+  .makeCard__item {
+    padding: 160px 78px 40px;
+  }
+
+  .makeCard__img {
+    transform: translateX(40%);
+  }
+
+  //.makeCard__item__title {
+  //  width: 215px;
+  //  margin-bottom: 16px;
+  //  text-align: center;
+  //  font-family: map-get($fonts, b), sans-serif;
+  //  font-size: 18px;
+  //  font-weight: 700;
+  //  line-height: 1.4;
+  //}
+
+  //.makeCard__descr {
+  //  width: 228px;
+  //  @include text;
+  //}
+}

@@ -1,0 +1,38 @@
+$fonts: (
+        m:'Gilroy-Medium',
+        sm:'Gilroy-Semibold',
+        b:'Gilroy-Bold',
+        eb:'Gilroy-Extrabold',
+);
+
+$bgc-primary-color: #ffffff;
+$bgc-footer-color: #e9f1fc;
+$bgc-orange-color: #fb8c00;
+$bgc-gray-color: #b4bbce;
+$bgc-light-gray-color: #f1f5f8;
+$bgc-blue-color: #2f80ed;
+$error-color: #eb5757;
+$input-border: #ECEEF1;
+
+$text-primary-color: #2c2f36;
+$text-blue-color: #2f80ed;
+$text-gray-color: #959cac;
+$text-color-btn: #ffffff;
+
+$shadow: 0px 4px 68px 0px rgba(33, 33, 33, 0.06);
+$shadow-work: 0px 4px 68px 0px rgba(32, 52, 91, 0.08);
+
+$gradient-header: radial-gradient(276.64% 98.97% at 1.03% 40.7%, #ebf6ff 0%, #eff8ff 100%);
+
+$gradient: radial-gradient(
+                252.06% 110.81% at 1.19% 19.9%,
+                #ebf6ff 0%,
+                #ebeaf8 33.33%,
+                #d8edee 61.98%,
+                #eff4f9 82.29%,
+                #eff8ff 100%
+);
+
+$animation: cubic-bezier(0.4, 0, 0.2, 1);
+$time-animation: 250ms;
+
