@@ -55,15 +55,14 @@ function MakeSection() {
       <div className={styles.container}>
         <Title className={styles.make__title}>Изготовим что угодно</Title>
         <ul className={styles.make__list}>
-          {data.map( ( item, index ) => {
-            const { img, title, descr } = item
-            return <MakeCard
+          {data.map( ( { img, title, descr }, index ) => (
+            <MakeCard
               key={index}
               img={img}
               title={title}
               text={descr}
             />
-          } )}
+          ) )}
         </ul>
       </div>
     </div>

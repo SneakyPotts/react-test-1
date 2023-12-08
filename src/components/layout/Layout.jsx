@@ -5,13 +5,13 @@ import { Footer, Header } from '../index.js'
 
 function Layout() {
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

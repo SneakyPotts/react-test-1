@@ -1,7 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components";
-import { HomePage, ModelingPage } from './pages';
-
+import { HomePage, ModelingPage } from "./pages";
 import './App.scss'
 
 function App() {

@@ -1,0 +1,63 @@
+@import "../../../styles";
+
+.exampleCard {
+  position: relative;
+}
+
+.exampleCarImg {
+  background-color: yellow;
+  border-radius: 16px;
+  box-shadow: 0px 4px 68px 0px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  width: 300px;
+  height: 236px;
+}
+
+.magnifyingGlassIconBtn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgc-orange-color;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.descriptionExampleCarImg {
+
+}
+
+.descriptionTitle {
+  @include title;
+  font-family: map-get($fonts, b), sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.descriptionText {
+  @include text;
+  text-align: start;
+}
+
+//========================
+@include desktopMedia() {
+
+ 
+  .exampleCarImg {
+    width: 470px;
+    height: 370px;
+  }
+
+  .magnifyingGlassIconBtn {
+    display: none;
+  }
+
+  .descriptionExampleCarImg {
+
+  }
+}

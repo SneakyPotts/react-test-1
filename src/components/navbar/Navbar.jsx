@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from './Navbar.module.scss'
 import { ReactComponent as CalcIcon } from "../../images/calc.svg";
 import { Button } from "../index";
+import styles from './Navbar.module.scss'
 
 const links = [
   { title: "3D-печать", path: '/' },
@@ -10,6 +10,7 @@ const links = [
 ]
 
 function Navbar( { onClose } ) {
+
   return (
     <>
       <nav className={styles.nav}>
@@ -23,7 +24,7 @@ function Navbar( { onClose } ) {
                 <NavLink
                   className={styles.link}
                   to={item.path}
-                  onClick={() => onClose()}
+                  // onClick={() => onClose()}
                 >{item.title}
                 </NavLink>
               </li>)

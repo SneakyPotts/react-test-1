@@ -71,6 +71,9 @@
   }
 }
 
+.accordionTitleClass {
+  @include accordionTitle;
+}
 
 //=============================================
 @include desktopMedia() {

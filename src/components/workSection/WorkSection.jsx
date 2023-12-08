@@ -15,17 +15,16 @@ function WorkSection() {
       <div className={styles.container}>
         <Title className={styles.work__title}>Как мы работаем</Title>
         <ol className={styles.work__list}>
-          {data.map( item => {
-            return (
-              <li
-                key={item.id}
-                className={styles.work__item}
-              >
-                <p className={styles.work__text}>
-                  {item.description}
-                </p>
-              </li>)
-          } )}
+          {data.map( ( { id, description } ) => (
+            <li
+              key={id}
+              className={styles.work__item}
+            >
+              <p className={styles.work__text}>
+                {description}
+              </p>
+            </li>)
+          )}
         </ol>
       </div>
     </div>

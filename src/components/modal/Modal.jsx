@@ -25,7 +25,7 @@ export const Modal = ( { onClose, children } ) => {
   }, [] );
 
   return createPortal(
-    <div>
+    <>
       <div
         className={styles.modalBackdrop}
         onClick={handleBackdropClick}
@@ -41,6 +41,6 @@ export const Modal = ( { onClose, children } ) => {
           {children}
         </div>
       </div>
-    </div>, modalRoot
+    </>, modalRoot
   )
 }

@@ -1,17 +1,102 @@
 @import "../../styles";
 
-.offers__container {
-  @include containerDesktop;
-  //padding: 80px 0;
+.offersSection {
+  background: url("../../../public/assets/hero/wave-mobile.png") 0 225px no-repeat,
+  $gradient-header;
 }
 
-.offers__title {
+.offersTitle {
   @include title;
   text-align: start;
-  margin-bottom: 197px;
+  margin-bottom: 180px;
+  padding: 70px 15px 0 15px;
 }
 
-.offers__title_accent {
+.offersTitleAccent {
   @include title;
   color: $bgc-orange-color;
+}
+
+.container {
+  @include mobileDesktop;
+  @include text;
+  text-align: start;
+  padding: 80px 15px 100px 15px;
+  background-color: #fff;
+}
+
+
+.offersDescription {
+  font-size: 24px;
+  padding-bottom: 32px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 72px;
+    height: 3px;
+    border-radius: 25px;
+    background-color: $bgc-orange-color;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.containerRightSide {
+  margin-top: 32px;
+}
+
+.offersList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 32px 0;
+}
+
+//=================================================
+
+@include desktopMedia() {
+
+  .offersSection {
+    background: url("../../../public/assets/offers/wave-desktop.png") left 17% no-repeat,
+    $gradient-header 0 0/100% 25% no-repeat;
+  }
+
+  .offersTitle {
+    @include containerDesktop;
+    @include title;
+    text-align: start;
+    padding: 80px 15px 197px 15px;
+  }
+
+  .offersTitleAccent {
+    @include title;
+    color: $bgc-orange-color;
+  }
+
+  .container {
+    @include containerDesktop;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+
+  .offersDescription {
+    padding-bottom: 50px;
+  }
+
+  .containerRightSide {
+    margin-top: 0;
+  }
+
+  .offersAccordionItem {
+    margin-bottom: 24px;
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+  }
+
 }

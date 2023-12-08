@@ -15,6 +15,12 @@ import QuestionSection from "./questionSection/QuestionSection";
 import Input from "./input/Input";
 import Footer from "./footer/Footer";
 import OffersSection from "./offersSection/OffersSection";
+import ExampleSection from "./exampleSection/ExampleSection";
+import ExampleCard from "./exampleSection/exampleCard/ExampleCard";
+import OurAdvantages from "./ourAdvantages/OurAdvantages";
+import AdvantagesCard from "./ourAdvantages/advantagesCard/AdvantagesCard";
+import PriceSection from "./priceSection/PriceSection";
+import OffersAccordion from "./offersSection/offersAccordion/OffersAccordion";
 
 export * from './propouseSection/PropouseSection'
 export * from './modal/Modal'
@@ -36,7 +42,11 @@ export {
   QuestionSection,
   Input,
   Footer,
-  OffersSection
-
+  OffersSection,
+  ExampleSection,
+  ExampleCard,
+  OurAdvantages,
+  AdvantagesCard,
+  PriceSection,
+  OffersAccordion,
 }
-

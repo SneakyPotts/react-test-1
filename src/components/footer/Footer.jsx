@@ -15,7 +15,7 @@ function Footer() {
             <li className={styles.footer__nav_item}>
               <NavLink
                 className={styles.footer__nav_link}
-                to='/home'
+                to='/'
               >3D-печать</NavLink></li>
             <li className={styles.footer__nav_item}>
               <NavLink
@@ -75,9 +75,8 @@ function Footer() {
             <Heard
               width='12'
               height='12'
-            /></div>
-
-
+            />
+          </div>
         </div>
       </div>
     </footer>

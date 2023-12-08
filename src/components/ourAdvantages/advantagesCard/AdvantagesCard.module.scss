@@ -1,0 +1,49 @@
+@import "../../../styles";
+
+.advantagesCardItem {
+  border-radius: 35px;
+  background: $gradient-header;
+  padding: 32px 36px 37px 24px;
+  display: flex;
+  gap: 24px;
+  justify-content: start;
+}
+
+.advantagesCardIconWrapper {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgc-primary-color;
+}
+
+.advantagesCardTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 163px;
+}
+
+.advantagesCardTitle {
+  @include title;
+  font-family: map-get($fonts, b), sans-serif;
+  font-size: 18px;
+  text-align: start;
+  min-height: 50px;
+}
+
+.advantagesCardText {
+  @include text;
+  text-align: start;
+  min-height: 66px;
+}
+
+//==============================
+@include desktopMedia() {
+  .advantagesCardItem {
+    padding: 32px 36px 37px 32px;
+    gap: 32px;
+  }
+}

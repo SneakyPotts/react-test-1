@@ -1,0 +1,79 @@
+@import "../../../styles";
+
+@include desktopMedia() {
+
+
+  .table {
+    border-radius: 35px;
+    background: $bgc-primary-color;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+
+  .headersColumnsGroup {
+    :nth-child(1) {
+      width: 300px;
+    }
+
+    :nth-child(2) {
+      width: 250px;
+    }
+
+    :nth-child(3) {
+      width: 250px;
+    }
+
+    :nth-child(4) {
+      width: 125px;
+    }
+  }
+
+  .headerColumnCell {
+    @include text;
+    color: $black-color-opacity;
+    font-family: map-get($fonts, sb), sans-serif;
+    font-size: 14px;
+    text-align: start;
+    padding-bottom: 12px;
+    //padding-right: 10px;
+  }
+
+  .tableBody {
+    :nth-child(1) {
+      width: 300px;
+    }
+
+    :nth-child(2) {
+      width: 250px;
+    }
+
+    :nth-child(3) {
+      width: 250px;
+    }
+
+    :nth-child(4) {
+      width: 125px;
+    }
+  }
+
+  .tableRow {
+    &:nth-child(odd) {
+      background-color: rgba(180, 187, 206, 0.15);
+    }
+  }
+  .tableRowHeader {
+    @include text;
+    text-align: start;
+    padding: 24px 53px 16px 0;
+    width: 247px;
+  }
+  .tableRowCell {
+    @include text;
+    font-family: map-get($fonts, b), sans-serif;
+  }
+  .tableRowCell {
+
+  }
+
+}

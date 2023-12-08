@@ -55,33 +55,22 @@
   .link {
     transition: all $animation $time-animation;
 
-    //&::before {
-    //  content: '';
-    //  position: absolute;
-    //  width: 100%;
-    //  height: 3px;
-    //  left: 0;
-    //  bottom: 10px;
-    //  border-radius: 18px;
-    //  visibility: hidden;
-    //}
-
-    &:hover, &:focus {
-      color: $bgc-orange-color;
-      opacity: 1;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: $bgc-orange-color;
-        left: 0;
-        bottom: 10px;
-        border-radius: 18px;
-        //visibility: visible;
-      }
+    &:hover::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $bgc-orange-color;
+      left: 0;
+      bottom: 10px;
+      border-radius: 18px;
+      transition: background-color $animation $time-animation;
     }
+
+    &:hover, &:focus, {
+      color: $bgc-orange-color;
+    }
+
   }
 }
 

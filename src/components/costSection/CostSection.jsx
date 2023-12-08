@@ -1,6 +1,7 @@
-import styles from './CostSection.module.scss'
 import { Accordion, Title } from '../index'
 import { useState } from "react";
+
+import styles from './CostSection.module.scss'
 
 const data = [
   {
@@ -114,8 +115,7 @@ function CostSection() {
             </button>
           </div>
           <ul>
-            {isPrinter ? (data2.map( item => {
-              const { id, title, description } = item
+            {isPrinter ? (data2.map( ( { id, title, description } ) => {
               return (
                 <Accordion
                   key={id}
@@ -123,22 +123,20 @@ function CostSection() {
                   text={description}
                 />
               )
-            } )) : (data.map( item => {
-              const { id, title, description } = item
-              return (
+            } )) : (data.map( ( { id, title, description } ) => (
                 <Accordion
                   key={id}
                   title={title}
                   text={description}
                 />
               )
-            } ))}
+            ))}
 
           </ul>
         </div>
 
       </div>
-      
+
     </div>
   )
 }

@@ -1,0 +1,29 @@
+@import "../../styles";
+
+.container {
+  @include mobileDesktop;
+  display: grid;
+  gap: 24px;
+  padding-bottom: 100px;
+}
+
+.ourAdvantagesTitle {
+  @include title;
+  text-align: start;
+  margin-bottom: 40px;
+}
+
+//====================
+@include desktopMedia() {
+  .container {
+    @include containerDesktop;
+    grid-template-columns: repeat(3, 370px);
+    align-items: center;
+    padding-bottom: 211px;
+  }
+
+  .ourAdvantagesTitle {
+    @include title;
+    margin-bottom: 0;
+  }
+}

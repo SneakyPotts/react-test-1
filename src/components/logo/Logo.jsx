@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Logo() {
   return (
-    <div>
+    <>
       <NavLink
         className="logo"
         to='/home'
@@ -14,7 +14,7 @@ function Logo() {
           height="30"
         />
       </NavLink>
-    </div>
+    </>
   )
 }
 
