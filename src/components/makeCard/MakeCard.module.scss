@@ -1,0 +1,54 @@
+@import "../../styles";
+
+
+.makeCard__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 108px 46px 40px 46px;
+  position: relative;
+  border-radius: 35px;
+  max-width: 320px;
+  background: $gradient-header;
+}
+
+.makeCard__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(5%, -50%);
+  object-fit: contain;
+}
+
+.makeCard__item__title {
+  width: 215px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 1.13rem;
+  font-weight: 700;
+}
+
+.makeCard__descr {
+  width: 228px;
+  @include text;
+}
+
+
+//=====================================================
+@include desktopMedia() {
+
+  .makeCard__item {
+    padding: 160px 78px 40px;
+    transition: padding-bottom $time-animation $animation;
+
+    //&:hover, &:focus {
+    //  padding-bottom: 50px;
+    //}
+  }
+
+  .makeCard__img {
+    transform: translate(0, -50%);;
+  }
+
+}

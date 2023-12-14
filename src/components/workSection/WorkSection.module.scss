@@ -1,0 +1,112 @@
+@import "../../styles";
+
+
+.work {
+  background: url("../../../public/assets/howWeWork/circle1.png") 25% 19%/26px 26px no-repeat,
+  url("../../../public/assets/howWeWork/circle2.png") 80% 490px/14px 14px no-repeat,
+  url("../../../public/assets/howWeWork/work-picture.png") 45% 20%/310px 180px no-repeat,
+  url("../../../public/assets/howWeWork/half-circle.png") 100% 20%/contain no-repeat,
+  url("../../../public/assets/howWeWork/rectangle.png") 25% 20%/70% no-repeat;
+}
+
+.container {
+  @include mobileDesktop;
+  padding: 88px 15px 120px 15px;
+}
+
+.work__title {
+  @include title;
+  margin-bottom: 398px;
+  text-align: start;
+}
+
+.work__list {
+  display: grid;
+  grid-template-columns: repeat(1, 271px);
+  align-content: center;
+  gap: 20px;
+}
+
+.work__item {
+  box-shadow: $shadow-work;
+  width: 345px;
+  height: 151px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  // =================
+  counter-increment: number;
+
+  &::after {
+    content: '0' counter(number);
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 36px;
+    font-weight: 700;
+
+    color: #2f80ed;
+  }
+
+  &::before {
+    content: '';
+    width: 158px;
+    height: 158px;
+    border-radius: 50%;
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    background: $gradient;
+  }
+}
+
+.work__text {
+  padding-left: 118px;
+  padding-right: 31px;
+
+  font-size: 1.13rem;
+  font-weight: 700;
+
+  text-align: start;
+}
+
+
+//====================================================================================
+@include desktopMedia() {
+
+  .work {
+    background: url("../../../public/assets/howWeWork/circle1.png") 15% 22% no-repeat,
+    url("../../../public/assets/howWeWork/circle2.png") 37% 70% no-repeat,
+    url("../../../public/assets/howWeWork/work-picture.png") 6% 35% /571px 336px no-repeat,
+    url("../../../public/assets/howWeWork/half-circle.png") left 35%/50% no-repeat,
+    url("../../../public/assets/howWeWork/rectangle.png") 6% 35%/30% no-repeat;
+  }
+
+  .container {
+    @include containerDesktop;
+    padding: 0 15px 182px 15px;
+  }
+
+  .work__title {
+    margin-bottom: 64px;
+  }
+
+  .work__list {
+    grid-template-columns: repeat(2, 271px);
+    gap: 30px;
+    padding-left: 600px;
+  }
+
+  .work__item {
+    width: 271px;
+
+    &:nth-child(1) {
+      grid-column: span 2;
+      width: 100%;
+    }
+  }
+
+
+}

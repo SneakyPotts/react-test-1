@@ -1,0 +1,137 @@
+@import "../../styles";
+
+.price {
+  background: url("../../../public/assets/cost/cost-wave-down.png") 40% bottom/300% no-repeat,
+  url("../../../public/assets/cost/cost-wave-up.png") 0 0/200% no-repeat,
+  $gradient-header;
+
+}
+
+.container {
+  @include mobileDesktop;
+  padding: 300px 15px 80px 15px;
+}
+
+.priceTitle {
+  @include title;
+  text-align: start;
+  margin-bottom: 64px;
+  width: 310px;
+}
+
+.priceCard {
+  width: 345px;
+  border-radius: 35px;
+  background-color: $bgc-light-gray-color;
+  box-shadow: $shadow;
+  padding: 70px 24px;
+  position: relative;
+}
+
+.priceLinks {
+  padding-bottom: 12px;
+  margin-bottom: 40px;
+  text-align: start;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(180, 187, 206, 0.2);
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.priceLinkItem {
+  color: $black-color-opacity;
+  font-size: 1.13rem;
+  font-weight: 700;
+  position: relative;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
+  transition: all $animation $time-animation;
+
+  &:nth-child(1) {
+    margin-right: 32px;
+  }
+
+  &:hover, &:focus {
+    color: $bgc-orange-color;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: $bgc-orange-color;
+    bottom: -14px;
+    left: 0;
+  }
+
+  &:hover::before, &:focus::before, {
+    width: 100%;
+    color: $bgc-orange-color;
+    transition: all $animation $time-animation;
+  }
+}
+
+.description {
+  @include text;
+  //text-align: start;
+  margin-bottom: 32px;
+}
+
+//=========================================
+@include desktopMedia() {
+
+  .price {
+    background: url("../../../public/assets/cost/cost-wave-down.png") 0 bottom/contain no-repeat,
+    url("../../../public/assets/cost/cost-wave-up.png") center 0/contain no-repeat,
+    $gradient-header;
+  }
+
+  .container {
+    @include containerDesktop;
+    padding: 350px 15px 80px 15px;
+  }
+  .priceTitle {
+    width: 100%;
+  }
+
+  .priceCard {
+    width: 100%;
+    background-color: $bgc-primary-color;
+    padding: 70px 0;
+
+    &::after {
+      content: '';
+      background-image: url('../../../public/assets/cost/circle1.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 74px;
+      height: 74px;
+      bottom: 120px;
+      left: -50px;
+    }
+  }
+  .priceLinks {
+    padding: 0 70px;
+
+    &::after {
+      width: 1030px;
+      transform: translate(70px, 12px);
+    }
+  }
+
+  .description {
+    padding: 0 70px;
+  }
+
+}

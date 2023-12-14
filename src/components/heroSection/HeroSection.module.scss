@@ -1,0 +1,216 @@
+@import "../../styles/index.scss";
+
+
+.hero {
+  background: url("../../../public/assets/hero/ball4.svg") right 97% no-repeat,
+  url("../../../public/assets/hero/ball3.svg") 65% 45% no-repeat,
+  url("../../../public/assets/hero/ball2.svg") right 32px no-repeat,
+  url("../../../public/assets/hero/ball1.svg") left 18% no-repeat,
+  url("../../../public/assets/hero/printer-mobile.png") 35% 32px/85% no-repeat,
+  url("../../../public/assets/hero/half-circle-mobile.png") 30% 40px/60% no-repeat,
+  url("../../../public/assets/hero/rectangle-mobile 7.png") 30% 32px/60% no-repeat, $gradient-header;
+  position: relative;
+
+  &::before {
+    content: url("../../../public/assets/hero/wave-mobile.png");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0, 89%);
+  }
+}
+
+.hero__scroll_wrapper {
+  display: none;
+}
+
+.container {
+  @include mobileDesktop;
+  padding: 340px 15px 120px 15px;
+}
+
+.hero__title {
+  width: 320px;
+  font-size: 3.88rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: left;
+  position: relative;
+  margin-bottom: 99px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 72px;
+    height: 3px;
+    background-color: $bgc-orange-color;
+    left: 0;
+    bottom: -32px;
+    border-radius: 25px;
+  }
+}
+
+.hero__title_accent {
+  color: $bgc-orange-color;
+}
+
+.hero__item {
+  &:nth-child(2) {
+    padding-top: 32px;
+  }
+
+  &:last-child {
+    margin-top: 60px;
+  }
+}
+
+.list__svg_wrapper {
+  display: flex;
+  background-color: $bgc-primary-color;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hero__item__description {
+  @include text;
+  text-align: start;
+  margin-top: 24px;
+  padding-bottom: 24px;
+}
+
+.hero__item:nth-child(2) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 3px;
+    background-color: $bgc-gray-color;
+    left: 0;
+    top: 0;
+    border-radius: 36px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 3px;
+    background-color: $bgc-gray-color;
+    left: 0;
+    bottom: 0;
+    border-radius: 36px;
+  }
+}
+
+//=========================================================================
+@include desktopMedia() {
+
+  .hero {
+    background: url("../../../public/assets/hero/circle1.png") 45% 10% no-repeat,
+    url("../../../public/assets/hero/circle2.png") 0 60% no-repeat,
+    url("../../../public/assets/hero/circle3.png") 70% bottom no-repeat,
+    url("/images/printer-desktop.png") 110% 15% no-repeat,
+    url("../../../public/assets/hero/half-circle.png") 100% 10% no-repeat,
+    url("../../../public/assets/hero/rectangle.png") 100% 10% no-repeat,
+    $gradient-header;
+
+
+    &::before {
+      content: url("../../../public/assets/hero/hero-wave.png");
+      transform: translate(0, 81%);
+    }
+  }
+
+  .hero__wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 72px;
+  }
+
+  .container {
+    @include containerDesktop;
+    padding: 100px 15px 300px 15px;
+  }
+
+  .wrapper_description {
+    display: flex;
+    flex-direction: column;
+    gap: 115px;
+  }
+
+  .hero__title {
+    font-size: 72px;
+    margin-bottom: 0;
+  }
+
+  .list__svg_wrapper {
+    margin-bottom: 0;
+  }
+
+  .hero__item {
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  .hero__item__description {
+    padding-bottom: 0;
+  }
+
+  .hero__list {
+    display: flex;
+    gap: 60px;
+    width: 670px;
+    //width: 100%;
+  }
+
+  .hero__item {
+    text-align: start;
+
+  }
+
+  .hero__item:nth-child(2) {
+
+    &::before {
+      width: 3px;
+      height: 150px;
+      left: -45px;
+      bottom: 0;
+    }
+
+    &::after {
+      width: 3px;
+      height: 150px;
+      left: 110%;
+      bottom: 0;
+    }
+  }
+
+
+  .hero__scroll_wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 34px;
+  }
+
+
+  .hero__scroll__descr {
+    color: $bgc-gray-color;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+}

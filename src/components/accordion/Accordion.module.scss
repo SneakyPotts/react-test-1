@@ -1,0 +1,69 @@
+@import "../../styles";
+
+
+.accordion__item {
+  border-bottom: solid 3px $bgc-gray-color;
+  padding: 16px 0;
+
+  &__active {
+    border-bottom: solid 3px $bgc-blue-color;
+    padding: 16px 0;
+  }
+}
+
+.accordionTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all $time-animation $animation;
+
+  &:hover .IconPlus {
+    stroke: $text-blue-color;
+  }
+
+  &:hover .cost__link__title {
+    color: $text-blue-color;
+  }
+}
+
+.IconPlus {
+  stroke: $text-primary-color;
+}
+
+.IconMinus {
+  stroke: $text-blue-color;
+}
+
+.cost__link__title {
+  @include title;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &__active {
+    @include title;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-blue-color;
+  }
+
+}
+
+.accordion__descr {
+  @include text;
+  font-size: 0.88rem;
+  text-align: start;
+  margin-top: 16px;
+}
+
+.collapse {
+  height: 0;
+  overflow: hidden;
+  transition: height $time-animation $animation;
+}
+
+.collapseOpen {
+  height: auto;
+}

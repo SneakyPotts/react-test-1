@@ -1,0 +1,8 @@
+@import "../../styles";
+
+.label {
+  //text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

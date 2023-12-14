@@ -1,0 +1,101 @@
+@import "variables";
+
+@mixin text {
+  color: $text-primary-color;
+  font-weight: 500;
+}
+
+@mixin title {
+  color: $text-primary-color;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+@mixin labelInput {
+  color: $text-gray-color;
+
+  font-size: 0.75rem;
+}
+
+@mixin before {
+  content: '';
+  position: absolute;
+}
+
+@mixin input {
+  @include text;
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid $input-border;
+  background: $bgc-primary-color;
+  font-size: 0.88rem;
+  text-align: start;
+  padding: 15px 24px;
+  cursor: pointer;
+  transition: border $time-animation $animation;
+
+  &::placeholder {
+    @include text;
+    color: $text-gray-color;
+  }
+
+  &:hover, &:focus {
+    border: 1px solid $bgc-orange-color;
+  }
+}
+
+@mixin link {
+  @include text;
+  color: $text-blue-color;
+  font-size: 0.75rem;
+  position: relative;
+  transition: all $time-animation $animation;
+
+  &::before {
+    @include before;
+    width: 100%;
+    height: 1px;
+    opacity: 0.3;
+    background-color: $bgc-blue-color;
+    left: 0;
+    bottom: -2px;
+  }
+
+  &:hover, &:focus {
+    color: $bgc-orange-color;
+
+    &::before {
+      background-color: $bgc-orange-color;
+    }
+  }
+}
+
+@mixin containerDesktop {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@mixin mobileDesktop {
+  width: 375px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@mixin accordionTitle {
+  @include title;
+  font-family: map-get($fonts, sm), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: start;
+}
+
+@mixin accordionTitleActive {
+  @include title;
+  font-family: map-get($fonts, sm), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: start;
+}

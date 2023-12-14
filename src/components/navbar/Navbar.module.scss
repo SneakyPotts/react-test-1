@@ -1,0 +1,75 @@
+@import '../../styles/index';
+
+
+.list {
+  position: relative;
+  padding-bottom: 79px;
+  margin-bottom: 30px;
+
+  &::before {
+    @include before;
+    width: 100%;
+    height: 1px;
+    background-color: $bgc-gray-color;
+    left: 0;
+    bottom: 0;
+  }
+
+}
+
+.item {
+  @include text;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+
+@include desktopMedia() {
+  .nav {
+    display: flex;
+    gap: 72px;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 72px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .item {
+    margin: 0;
+    padding: 15px 0;
+    position: relative;
+  }
+
+  .link {
+    transition: color $animation $time-animation;
+
+    &:hover, &:focus {
+      color: $bgc-orange-color;
+    }
+
+    &::before {
+      @include before;
+      width: 0;
+      height: 3px;
+      background-color: $bgc-orange-color;
+      left: 0;
+      bottom: 10px;
+      border-radius: 18px;
+    }
+
+    &:hover::before, &:focus::before, {
+      width: 100%;
+      color: $bgc-orange-color;
+      transition: all $animation $time-animation;
+    }
+  }
+}
+

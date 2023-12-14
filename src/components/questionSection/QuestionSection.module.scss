@@ -1,0 +1,175 @@
+@import "../../styles";
+
+
+.questions {
+  background: url("../../../public/assets/questions/circle1.png") -90% 12% no-repeat
+}
+
+.container {
+  @include mobileDesktop;
+  padding: 102px 15px 41px 15px;
+}
+
+.question__card {
+  padding: 50px 24px 53px 24px;
+  background: $gradient;
+  box-shadow: $shadow;
+  border-radius: 35px;
+}
+
+.question__card__title {
+  @include title;
+  text-align: start;
+  margin-bottom: 16px;
+}
+
+.question__card__descr {
+  @include text;
+  text-align: start;
+  width: 297px;
+  margin-bottom: 30px;
+}
+
+.input__label {
+  @include labelInput;
+}
+
+.input {
+  @include input;
+  width: 297px;
+  height: 50px;
+  margin-bottom: 24px;
+}
+
+.textArea__label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.textArea {
+  @include text;
+  resize: none;
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid $input-border;
+  background: $bgc-primary-color;
+  font-size: 0.88rem;
+  text-align: start;
+  padding: 15px 24px;
+  cursor: pointer;
+  transition: border $time-animation $animation;
+  margin-bottom: 33px;
+
+  &::placeholder {
+    @include text;
+    color: $text-gray-color;
+    text-align: start;
+  }
+
+  &:hover, &:focus {
+    border: 1px solid $bgc-orange-color;
+  }
+}
+
+.form_btn {
+  padding: 14px 44px;
+  margin-bottom: 16px;
+}
+
+.policy {
+  @include text;
+  font-size: 0.75rem;
+  text-align: start;
+  width: 246px;
+
+  &__decription {
+    display: inline;
+    margin-right: 5px;
+  }
+}
+
+.link {
+  @include link;
+}
+
+//=====================================================
+
+@include desktopMedia() {
+  .questions {
+    background: url("../../../public/assets/questions/circle1.png") 5% 85% no-repeat,
+    url("../../../public/assets/questions/circle2.png") 70% bottom no-repeat
+  }
+
+  .container {
+    @include containerDesktop;
+    padding: 108px 15px 110px 15px;
+  }
+
+  .question__card {
+    padding: 70px 70px 76px 70px;
+    background: $gradient;
+    box-shadow: $shadow;
+    border-radius: 35px;
+    display: flex;
+    gap: 73px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .question__card__title {
+    @include title;
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  .question__card__descr {
+    @include text;
+    text-align: start;
+    width: 380px;
+    margin-bottom: 0;
+  }
+
+  .form__inputs__wrapper {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 26px;
+  }
+
+  .input__label {
+    @include labelInput;
+  }
+
+  .input {
+    @include input;
+    width: 235px;
+    height: 50px;
+    margin-bottom: 0;
+  }
+
+
+  .textArea__label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .textArea {
+    margin-bottom: 32px;
+  }
+
+  .question__footer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .form_btn {
+    padding: 14px 76px;
+    margin-bottom: 0;
+  }
+}
+
+.policy {
+  width: 218px;
+}

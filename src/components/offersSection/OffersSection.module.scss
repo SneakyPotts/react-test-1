@@ -1,0 +1,118 @@
+@import "../../styles";
+
+
+.offersTitleWrapper {
+  background: $gradient-header;
+  position: relative;
+
+  &::after {
+    content: url("../../../public/assets/hero/wave-mobile.png");
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, 8px);
+  }
+}
+
+.offersTitle {
+  @include title;
+  text-align: start;
+  padding: 70px 15px 230px 15px;
+
+}
+
+.offersTitleAccent {
+  @include title;
+  color: $bgc-orange-color;
+}
+
+.container {
+  @include mobileDesktop;
+  @include text;
+  text-align: start;
+  padding: 80px 15px 100px 15px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+
+.offersDescription {
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 32px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 72px;
+    height: 3px;
+    border-radius: 25px;
+    background-color: $bgc-orange-color;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.containerRightSide {
+  margin-top: 32px;
+}
+
+.offersList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 32px 0;
+}
+
+//=================================================
+
+@include desktopMedia() {
+
+
+  .offersTitleWrapper {
+    &::after {
+      content: url("../../../public/assets/offers/wave-desktop.png");
+      height: 141px;
+      transform: translate(0, 0);
+    }
+  }
+
+  .offersTitle {
+    @include containerDesktop;
+    @include title;
+    text-align: start;
+    padding: 80px 15px 197px 15px;
+  }
+
+  .offersTitleAccent {
+    @include title;
+    color: $bgc-orange-color;
+  }
+
+  .container {
+    @include containerDesktop;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+
+  .offersDescription {
+    padding-bottom: 50px;
+    max-width: 570px;
+  }
+
+  .containerRightSide {
+    margin-top: 0;
+  }
+
+  .offersAccordionItem {
+    margin-bottom: 24px;
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+  }
+
+}
