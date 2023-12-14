@@ -1,9 +1,9 @@
-import styles from './PriceSection.module.scss'
-import { useEffect, useState } from "react";
+import {useState} from "react";
 import TableMobile from "./tableMobile/tableMobile";
-import { Title } from "../index";
+import {Title} from "../index";
 import TableDesktop from "./tableDesktop/TableDesktop";
-import { useWindowSize } from "../../hooks/useWindowSize";
+import {useWindowSize} from "../../hooks/useWindowSize";
+import styles from './PriceSection.module.scss'
 
 const dataTable = [
   {
@@ -69,56 +69,36 @@ const dataTable2 = [
 ]
 
 function PriceSection() {
-  const [isFDM, setIsFDM] = useState( false )
+  const [isFDM, setIsFDM] = useState(false)
   const data = isFDM ? dataTable : dataTable2
-  // ==========================================
-  const { width } = useWindowSize()
-  console.log( width )
-  // const [width, setWidth] = useState( window.innerWidth );
-  //
-  // console.log( 'width', width )
-  //
-  // useEffect( () => {
-  //   const handleCheckSizeWindow = () => {
-  //     setWidth( window.innerWidth );
-  //   };
-  //   window.addEventListener( 'resize', handleCheckSizeWindow )
-  //
-  //   return () => {
-  //     window.removeEventListener( 'resize', handleCheckSizeWindow )
-  //   };
-  // }, [] );
-  // ================================================
+
+  const {width} = useWindowSize()
+
   return (
     <div className={styles.price}>
       <div className={styles.container}>
-        <Title className={styles.priceTitle}>
-          Цены
-        </Title>
-
-
+        <Title className={styles.priceTitle}> Цены </Title>
         <div className={styles.priceCard}>
           <div className={styles.priceLinks}>
             <button
-              onClick={() => setIsFDM( false )}
+              onClick={() => setIsFDM(false)}
               className={styles.priceLinkItem}
               type="button"
             >FDM
             </button>
             <button
-              onClick={() => setIsFDM( true )}
+              onClick={() => setIsFDM(true)}
               className={styles.priceLinkItem}
               type="button"
             >SLA
             </button>
           </div>
           <p className={styles.description}>
-            Метод послойного наплавления, применяется для широкого
-            спектра материалов.
+            Метод послойного наплавления, применяется для широкого спектра материалов.
           </p>
-          {width >= 375 ? <TableDesktop dataTable={dataTable} /> : <TableMobile dataTable={data} />}
-          {/*<TableMobile dataTable={data} />*/}
-          {/*<TableDesktop dataTable={dataTable} />*/}
+          {width >= 376 ? <TableDesktop dataTable={dataTable}/> :
+            <TableMobile
+              dataTable={data}/>} {/*<TableMobile dataTable={data} />*/} {/*<TableDesktop dataTable={dataTable} />*/}
         </div>
       </div>
     </div>

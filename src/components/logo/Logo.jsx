@@ -5,10 +5,10 @@ function Logo() {
     <>
       <NavLink
         className="logo"
-        to='/home'
+        to='/'
       >
         <img
-          src="../../assets/logo.svg"
+          src="/assets/logo.svg"
           alt="logo site"
           width="110"
           height="30"

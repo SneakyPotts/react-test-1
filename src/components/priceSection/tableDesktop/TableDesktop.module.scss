@@ -33,29 +33,24 @@
     @include text;
     color: $black-color-opacity;
     font-family: map-get($fonts, sb), sans-serif;
-    font-size: 14px;
+    font-size: 0.88rem;
     text-align: start;
     padding-bottom: 12px;
-    //padding-right: 10px;
+
+    &:first-child {
+      padding-left: 70px;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      padding-right: 115px;
+    }
+
+    &:last-child {
+      padding-right: 100px;
+    }
+
   }
-
-  .tableBody {
-    :nth-child(1) {
-      width: 300px;
-    }
-
-    :nth-child(2) {
-      width: 250px;
-    }
-
-    :nth-child(3) {
-      width: 250px;
-    }
-
-    :nth-child(4) {
-      width: 125px;
-    }
-  }
+  
 
   .tableRow {
     &:nth-child(odd) {
@@ -67,10 +62,18 @@
     text-align: start;
     padding: 24px 53px 16px 0;
     width: 247px;
+
+    &:first-child {
+      padding-left: 70px;
+    }
+
+    &:last-child {
+      padding-right: 172px;
+    }
   }
   .tableRowCell {
     @include text;
-    font-family: map-get($fonts, b), sans-serif;
+
   }
   .tableRowCell {
 

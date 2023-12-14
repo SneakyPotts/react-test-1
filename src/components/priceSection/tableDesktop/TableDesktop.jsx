@@ -15,7 +15,7 @@ function TableDesktop( { dataTable } ) {
         ) )}
       </tr>
       </thead>
-      <tbody className={styles.tableBody}>
+      <tbody>
       {dataTable.map( ( { id, material, standard, optimal, high } ) => {
         return (
           <tr

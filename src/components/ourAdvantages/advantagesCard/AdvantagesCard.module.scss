@@ -28,8 +28,8 @@
 
 .advantagesCardTitle {
   @include title;
-  font-family: map-get($fonts, b), sans-serif;
-  font-size: 18px;
+
+  font-size: 1.13rem;
   text-align: start;
   min-height: 50px;
 }

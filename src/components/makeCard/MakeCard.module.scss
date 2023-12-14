@@ -10,15 +10,14 @@
   position: relative;
   border-radius: 35px;
   max-width: 320px;
-  border-radius: 35px;
   background: $gradient-header;
 }
 
 .makeCard__img {
   position: absolute;
-  top: -60px;
+  top: 0;
   left: 0;
-  transform: translateX(40%);
+  transform: translate(5%, -50%);
   object-fit: contain;
 }
 
@@ -26,10 +25,8 @@
   width: 215px;
   margin-bottom: 16px;
   text-align: center;
-  font-family: map-get($fonts, b), sans-serif;
-  font-size: 18px;
+  font-size: 1.13rem;
   font-weight: 700;
-  line-height: 1.4;
 }
 
 .makeCard__descr {
@@ -43,24 +40,15 @@
 
   .makeCard__item {
     padding: 160px 78px 40px;
+    transition: padding-bottom $time-animation $animation;
+
+    //&:hover, &:focus {
+    //  padding-bottom: 50px;
+    //}
   }
 
   .makeCard__img {
-    transform: translateX(40%);
+    transform: translate(0, -50%);;
   }
 
-  //.makeCard__item__title {
-  //  width: 215px;
-  //  margin-bottom: 16px;
-  //  text-align: center;
-  //  font-family: map-get($fonts, b), sans-serif;
-  //  font-size: 18px;
-  //  font-weight: 700;
-  //  line-height: 1.4;
-  //}
-
-  //.makeCard__descr {
-  //  width: 228px;
-  //  @include text;
-  //}
 }

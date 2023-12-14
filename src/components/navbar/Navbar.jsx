@@ -24,7 +24,6 @@ function Navbar( { onClose } ) {
                 <NavLink
                   className={styles.link}
                   to={item.path}
-                  // onClick={() => onClose()}
                 >{item.title}
                 </NavLink>
               </li>)

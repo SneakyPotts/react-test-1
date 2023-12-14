@@ -1,16 +1,15 @@
 @import "../../../styles";
 
-.tableBody {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
 
-.tableColumn {
+.contentBox {
   position: relative;
   padding-bottom: 24px;
 
-  &::after {
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  &:not(:last-child)::after {
     content: '';
     position: absolute;
     left: 0;
@@ -22,27 +21,22 @@
   }
 }
 
-.tableCell {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 
 .listTitle {
   @include title;
-  color: rgba(44, 47, 54, 0.4);
-  font-family: map-get($fonts, sb), sans-serif;
-  font-size: 14px;
-  text-align: start;
+  font-weight: 600;
+  color: $black-color-opacity;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
 }
 
-.textList {
+.listSubtitle {
   @include text;
-  text-align: start;
+  margin-bottom: 24px;
 }
 
-.textListStrong {
+.listPrice {
   @include text;
-  text-align: start;
   font-weight: 700;
+  margin-bottom: 24px;
 }

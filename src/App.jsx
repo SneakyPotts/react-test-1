@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components";
 import { HomePage, ModelingPage } from "./pages";
-import './App.scss'
 
 function App() {
 
@@ -13,11 +12,11 @@ function App() {
           element={<Layout />}
         >
           <Route
-            path="/"
+            index
             element={<HomePage />}
           />
           <Route
-            path="modeling"
+            path="/modeling"
             element={<ModelingPage />}
           />
 

@@ -6,20 +6,32 @@
   background: $gradient-header;
 }
 
+.linkAccordion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+
 .title {
   @include title;
-  font-family: map-get($fonts, b), sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: uppercase;
   text-align: start;
-  padding: 14px 24px;
   color: $bgc-orange-color;
+}
 
+.IconMinus {
+  stroke: $bgc-orange-color;
+}
+
+.IconPlus {
+  stroke: $text-primary-color;
 }
 
 .text {
   @include text;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: start;
 }
 

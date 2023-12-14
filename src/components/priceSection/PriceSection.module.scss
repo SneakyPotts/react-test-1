@@ -46,49 +46,50 @@
 }
 
 .priceLinkItem {
-  font-family: map-get($fonts, b), sans-serif;
-  color: rgba(44, 47, 54, 0.4);
-  font-size: 18px;
+  color: $black-color-opacity;
+  font-size: 1.13rem;
   font-weight: 700;
-  line-height: 1.4;
-  transition: all $animation $time-animation;
   position: relative;
   border: none;
   background-color: inherit;
   padding: 0;
   cursor: pointer;
-
+  transition: all $animation $time-animation;
 
   &:nth-child(1) {
     margin-right: 32px;
   }
 
-
   &:hover, &:focus {
     color: $bgc-orange-color;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      background-color: $bgc-orange-color;
-      bottom: -12px;
-      left: 0;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: $bgc-orange-color;
+    bottom: -14px;
+    left: 0;
+  }
+
+  &:hover::before, &:focus::before, {
+    width: 100%;
+    color: $bgc-orange-color;
+    transition: all $animation $time-animation;
   }
 }
 
 .description {
   @include text;
-  text-align: start;
+  //text-align: start;
   margin-bottom: 32px;
 }
 
 //=========================================
 @include desktopMedia() {
-  //url("../../../public/assets/cost/circle2.png") 95% bottom no-repeat,
-  //url("../../../public/assets/cost/circle3.png") 83% top no-repeat,
+
   .price {
     background: url("../../../public/assets/cost/cost-wave-down.png") 0 bottom/contain no-repeat,
     url("../../../public/assets/cost/cost-wave-up.png") center 0/contain no-repeat,
@@ -106,7 +107,7 @@
   .priceCard {
     width: 100%;
     background-color: $bgc-primary-color;
-    padding: 70px;
+    padding: 70px 0;
 
     &::after {
       content: '';
@@ -119,6 +120,18 @@
       bottom: 120px;
       left: -50px;
     }
+  }
+  .priceLinks {
+    padding: 0 70px;
+
+    &::after {
+      width: 1030px;
+      transform: translate(70px, 12px);
+    }
+  }
+
+  .description {
+    padding: 0 70px;
   }
 
 }

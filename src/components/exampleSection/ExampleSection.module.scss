@@ -2,8 +2,7 @@
 
 .container {
   @include mobileDesktop;
-  text-align: start;
-  padding-bottom: 100px;
+  padding: 0 0 100px 0;
   overflow: hidden;
 }
 
@@ -36,25 +35,58 @@
   margin-bottom: 60px;
 }
 
-.exampleList {
-  //display: flex;
-  //justify-content: flex-start;
-  //gap: 20px;
+.arrows {
+  visibility: hidden;
 }
 
 //============================
 @include desktopMedia() {
   .container {
     @include containerDesktop;
-    padding-bottom: 180px;
-    padding-left: 0;
+    padding: 0 0 180px 0;
   }
 
   .exampleSectionTitle {
     margin-bottom: 64px;
   }
 
-  .exampleList {
-    gap: 30px;
+
+  //=======================
+  .arrows {
+    visibility: visible;
+    display: flex;
+    gap: 24px;
+    transform: translateY(-110px);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & > .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $bgc-orange-color;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      transition: background-color $time-animation $animation;
+
+      &:hover {
+        background-color: $bgc-blue-color;
+      }
+    }
   }
+
+  .prev > svg, .next > svg {
+    width: 12px;
+    height: 18px;
+    fill: white;
+  }
+
+  .prev > svg {
+    rotate: 180deg;
+  }
+
+
 }

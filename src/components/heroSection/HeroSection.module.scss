@@ -8,8 +8,18 @@
   url("../../../public/assets/hero/ball1.svg") left 18% no-repeat,
   url("../../../public/assets/hero/printer-mobile.png") 35% 32px/85% no-repeat,
   url("../../../public/assets/hero/half-circle-mobile.png") 30% 40px/60% no-repeat,
-  url("../../../public/assets/hero/rectangle-mobile 7.png") 30% 32px/60% no-repeat,
-  url("../../../public/assets/hero/wave-mobile.png") 0 100% no-repeat, $gradient-header;
+  url("../../../public/assets/hero/rectangle-mobile 7.png") 30% 32px/60% no-repeat, $gradient-header;
+  position: relative;
+
+  &::before {
+    content: url("../../../public/assets/hero/wave-mobile.png");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0, 89%);
+  }
 }
 
 .hero__scroll_wrapper {
@@ -22,9 +32,8 @@
 }
 
 .hero__title {
-  font-family: map-get($fonts, eb), sans-serif;
   width: 320px;
-  font-size: 62px;
+  font-size: 3.88rem;
   font-weight: 800;
   line-height: 1.2;
   text-align: left;
@@ -66,15 +75,13 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
-
-
 }
 
 .hero__item__description {
   @include text;
   text-align: start;
   margin-top: 24px;
-  padding-bottom: 24px; //delete
+  padding-bottom: 24px;
 }
 
 .hero__item:nth-child(2) {
@@ -86,7 +93,7 @@
     width: 150px;
     height: 3px;
     background-color: $bgc-gray-color;
-    left: 0px;
+    left: 0;
     top: 0;
     border-radius: 36px;
   }
@@ -113,9 +120,13 @@
     url("/images/printer-desktop.png") 110% 15% no-repeat,
     url("../../../public/assets/hero/half-circle.png") 100% 10% no-repeat,
     url("../../../public/assets/hero/rectangle.png") 100% 10% no-repeat,
-    url("../../../public/assets/hero/hero-wave.png") center bottom no-repeat,
     $gradient-header;
 
+
+    &::before {
+      content: url("../../../public/assets/hero/hero-wave.png");
+      transform: translate(0, 81%);
+    }
   }
 
   .hero__wrapper {
@@ -198,9 +209,8 @@
 
 
   .hero__scroll__descr {
-    font-family: map-get($fonts, b), sans-serif;
     color: $bgc-gray-color;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 700;
   }
 }

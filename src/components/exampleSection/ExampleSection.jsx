@@ -1,34 +1,33 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import cn from 'classnames'
 import { ExampleCard, Title } from "../index";
-import { ReactComponent as ArrowLeft } from "../../images/arrow-left.svg";
-import { ReactComponent as ArrowRight } from "../../images/arrow-right.svg";
+
 import styles from './ExampleSection.module.scss'
-import '@splidejs/react-splide/css';
-// import '@splidejs/react-splide/css/core';
+import '@splidejs/splide/css/core';
 
 const data = [
   {
-    id: '1', img: "/assets/example/example1.png", title: 'Промышленные прототипы',
+    id: '1', img: "/assets/example/example-mobile-1.png", title: 'Промышленные прототипы',
     description: 'Технология: FDM'
   },
   {
-    id: '2', img: "/assets/example/example1.png", title: 'Архитектурные макеты',
+    id: '2', img: "/assets/example/example-mobile-1.png", title: 'Архитектурные макеты',
     description: 'Технология: SLA'
   },
   {
-    id: '3', img: "/assets/example/example1.png", title: 'Ювелирные изделия',
+    id: '3', img: "/assets/example/example-mobile-1.png", title: 'Ювелирные изделия',
     description: 'Технология: SLA'
   },
   {
-    id: '4', img: "/assets/example/example1.png", title: 'Промышленные прототипы',
+    id: '4', img: "/assets/example/example-mobile-1.png", title: 'Промышленные прототипы',
     description: 'Технология: FDM'
   },
   {
-    id: '5', img: "/assets/example/example1.png", title: 'Архитектурные макеты',
+    id: '5', img: "/assets/example/example-mobile-1.png", title: 'Архитектурные макеты',
     description: 'Технология: SLA'
   },
   {
-    id: '6', img: "/assets/example/example1.png", title: 'Ювелирные изделия',
+    id: '6', img: "/assets/exampleexample-mobile-1.pngpng", title: 'Ювелирные изделия',
     description: 'Технология: SLA'
   },
 ]
@@ -36,64 +35,41 @@ const data = [
 function ExampleSection() {
   const options = {
     type: 'loop',
-    fixedWidth: "470px",
-    // perPage: 3,
+    perPage: 3,
+    fixedWidth: '30rem',
     perMove: 1,
-    gap: '30px',
+    gap: 30,
     pagination: false,
     breakpoints: {
-      375: {
+      400: {
         perPage: 2,
-        gap: '20px'
+        fixedWidth: '19rem',
+        gap: 20,
       }
+    },
+
+    classes: {
+      arrows: cn( 'splide__arrows', styles.arrows ),
+      arrow: cn( 'splide__arrow', styles.arrow ),
+      prev: cn( 'splide__arrow--prev', styles.prev ),
+      next: cn( 'splide__arrow--next', styles.next ),
     }
   }
 
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.headerWrapper}>
-          <Title className={styles.exampleSectionTitle}>Примеры работ</Title>
-          
-          {/*<div className={styles.btnWrapper}>*/}
-          {/*<button*/}
-          {/*  type="button"*/}
-          {/*  className={styles.btnIcon}*/}
-          {/*>*/}
-          {/*  /!*<ArrowLeft />*!/*/}
-          {/*</button>*/}
-          {/*<button*/}
-          {/*  // style={{ width: '40px', height: '40px', backgroundColor: 'red' }}*/}
-          {/*  type="button"*/}
-          {/*  className={styles.btnIcon}*/}
-          {/*>*/}
-          {/*  /!*<ArrowRight />*!/*/}
-          {/*</button>*/}
-          {/*</div>*/}
-
-        </div>
-        <Splide
-          options={options}
-          // className={styles.exampleList}
-        >
-          <div className="splide__arrows">
-            <button className="splide__arrow splide__arrow--prev">
-              Prev
-            </button>
-            <button className="splide__arrow splide__arrow--next">
-              Next
-            </button>
-          </div>
-          {data.map( ( { id, title, description, img } ) => (
-            <SplideSlide key={id}>
-              <ExampleCard
-                title={title}
-                description={description}
-                img={img}
-              />
-            </SplideSlide>
-          ) )}
-        </Splide>
+        <Title className={styles.exampleSectionTitle}>Примеры работ</Title> <Splide
+        options={options}
+      >
+        {data.map( ( { id, title, description, img } ) => (
+          <SplideSlide key={id}> <ExampleCard
+            title={title}
+            description={description}
+            img={img}
+          /> </SplideSlide>
+        ) )}
+      </Splide>
       </div>
     </>
   )
